@@ -61,7 +61,7 @@ export default function Contact() {
 
       <div className="contact-container">
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form onSubmit={handleSubmit} className="contact-form" method="POST">
           <input
             type="text"
             name="name"
