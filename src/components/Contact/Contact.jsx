@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import "../Contact/contact.css";
 
@@ -10,29 +11,34 @@ export default function Contact() {
   });
 
   const [success, setSuccess] = useState(false);
+  const formRef = useRef(); // Use ref for form
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Sending data to FormSubmit (Replace with your email)
-    const response = await fetch("https://formsubmit.co/tsujeet440@gmail.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
 
-    if (response.ok) {
-      setSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-
-      setTimeout(() => setSuccess(false), 3000);
-    } else {
-      alert("Error sending message. Try again!");
-    }
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSuccess(false), 3000);
+      })
+      .catch((error) => {
+        console.error("FAILED...", error);
+        alert("Error sending message. Try again!");
+      });
   };
 
   return (
@@ -60,8 +66,7 @@ export default function Contact() {
       </div>
 
       <div className="contact-container">
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="contact-form" method="POST">
+        <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"
             name="name"
@@ -88,7 +93,6 @@ export default function Contact() {
           <button type="submit">Send Message</button>
         </form>
 
-        {/* Success Message */}
         {success && (
           <p className="success-message">Message sent successfully! ✅</p>
         )}
