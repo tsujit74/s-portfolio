@@ -1,0 +1,41 @@
+.footer {
+    background: #2C003E;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    color: #FFD700; /* Gold color */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.linkedin:hover {
+    color: #0077b5;
+}
+
+.github:hover {
+    color: #333;
+}
+
+.email:hover {
+    color: #D44638;
+}

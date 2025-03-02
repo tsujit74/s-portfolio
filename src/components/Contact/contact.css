@@ -1,0 +1,87 @@
+.contact-section {
+    text-align: center;
+    padding: 30px 20px;
+    background: #2C003E;
+    width: 75%;
+    color: white;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.contact-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    background: #FFD700;
+    color: #2C003E;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+}
+
+.contact-form button:hover {
+    background: #FFC107;
+}
+
+.success-message {
+    color: #00FF00;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 10px;
+    padding-bottom: 10px;
+}
+
+.icon {
+    font-size: 350px;
+    color: #FFD700; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.linkedin:hover {
+    color: #0077b5; 
+}
+
+.github:hover {
+    color: #333; 
+}
+
+.email:hover {
+    color: #D44638; 
+}

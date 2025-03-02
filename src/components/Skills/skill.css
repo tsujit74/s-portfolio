@@ -1,0 +1,66 @@
+.skills-section {
+    text-align: center;
+    background: #f8f9fa;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.skills-section h2 {
+    margin-top: 10px    ;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    cursor: pointer;
+    /* border: 4px solid rgb(229, 255, 0);
+  box-shadow: 0 0 20px rgba(246, 235, 139, 0.301); */
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 4px solid rgb(229, 255, 0) ;
+    
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffee00;
+}
+
+.skill-text h4{
+    font-size: 1rem;
+    padding: 1px;
+    margin: 1px;
+    color: #ffffffcc;
+}
+
+.skill-card {
+    font-size: 1.1rem;
+    color: #ffffff99;
+    background-color: #2C003E;
+}

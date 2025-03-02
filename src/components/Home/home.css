@@ -1,0 +1,208 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 40px;
+}
+
+/* Home Content */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 50px;
+  text-align: left;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Image Container */
+.image-container {
+  flex: 0 0 30%;
+  max-width: 300px;
+  margin-right: 10px;
+  animation: slideIn 1.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents image overflow */
+  padding: 30px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;  /* Adjust as needed */
+  max-height: 250px; /* Ensures perfect circle */
+  border-radius: 50%;
+  border: 4px solid #2c003e;
+  box-shadow: 0 0 20px #2c003e;
+  object-fit: cover; /* Ensures image fits within the circle without distortion */
+  transition: transform 0.3s ease;
+}
+
+
+.profile-photo:hover {
+  transform: scale(1.1);
+}
+
+.animated-text {
+  display: flex;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.word {
+  opacity: 0;
+  animation: fadeIn 4s infinite;
+}
+
+.word:nth-child(1) { animation-delay: 0s; }
+.word:nth-child(2) { animation-delay: 1s; }
+.word:nth-child(3) { animation-delay: 2s; }
+.word:nth-child(4) { animation-delay: 3s; }
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; }
+}
+
+
+/* Text Container */
+.text-container {
+  flex: 1;
+  animation: slideIn 1.5s ease-out;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInText 2s ease-in-out 0.5s forwards;
+}
+
+.intro-text p {
+  font-size: 20px;
+}
+
+.highlight {
+  color: rgba(6, 6, 167, 0.9);
+}
+
+.intro-content {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fadeInText 2s ease-in-out 1s forwards;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn.download-btn {
+  background: #2c003e;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+}
+
+.btn.download-btn:hover {
+  background: #4b0082;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .home-container {
+    width: 100%;
+  }
+  .image-container {
+    margin-right: 0;
+    margin-bottom: 0px;
+  }
+
+  .intro-text{
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .profile-photo {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-buttons {
+    padding: 8px 20px;
+  }
+}
